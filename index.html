@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Urban Parkour + Paintball Prototype</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div id="ui">
+    <h1>First-Person Paintball Target Practice</h1>
+    <p>
+      Click to Start (Lock Mouse) &nbsp;|&nbsp; WASD = move &nbsp;|&nbsp; Space = jump &nbsp;|&nbsp; Left Click = shoot &nbsp;|&nbsp; ESC = menu
+    </p>
+    <p>
+      <strong>Tab</strong> = Toggle Focus Mode &nbsp;|&nbsp; 
+      <span id="focusMode">FOCUSED</span>
+    </p>
+    <div id="score">Score: 0</div>
+    <label class="file-label">
+      Import geometry (.gltf / .glb):
+      <input type="file" id="fileInput" accept=".gltf,.glb" />
+    </label>
+  </div>
+  
+  <!-- Vignette overlay for focus effect -->
+  <div id="vignette"></div>
+  
+  <!-- Crosshair -->
+  <div id="crosshair"></div>
+
+  <canvas id="gameCanvas"></canvas>
+
+  <!-- Import map for Three.js module resolution -->
+  <script type="importmap">
+    {
+      "imports": {
+        "three": "https://unpkg.com/three@0.161.0/build/three.module.js",
+        "three/addons/": "https://unpkg.com/three@0.161.0/examples/jsm/"
+      }
+    }
+  </script>
+
+  <!-- Main game logic -->
+  <script type="module" src="main.js"></script>
+</body>
+</html>

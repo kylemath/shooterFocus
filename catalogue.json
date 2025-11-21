@@ -1,0 +1,11 @@
+{
+  "id": "shooterFocus",
+  "title": "ShooterFocus",
+  "oneLiner": "A game where the focus level of the shooter affects the focus mode of the game",
+  "demoUrl": "[A[A",
+  "screenshot": "https://raw.githubusercontent.com/kylemath/shooterFocus/main/screenshot.png",
+  "kind": "project",
+  "categories": ["game", "eeg", "shooting"],
+  "tags": ["game", "eeg shooting"],
+  "status": "published"
+}

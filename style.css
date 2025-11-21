@@ -1,0 +1,140 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  }
+  
+  html,
+  body {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background: #000;
+  }
+  
+  #gameCanvas {
+    position: fixed;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    display: block;
+  }
+  
+  /* Simple overlay UI */
+  #ui {
+    position: fixed;
+    top: 12px;
+    left: 12px;
+    z-index: 10;
+    background: rgba(0, 0, 0, 0.6);
+    color: #f5f5f5;
+    padding: 10px 12px;
+    border-radius: 8px;
+    max-width: 380px;
+    font-size: 14px;
+  }
+  
+  #ui h1 {
+    font-size: 16px;
+    margin-bottom: 6px;
+  }
+  
+  #ui p {
+    margin-bottom: 8px;
+  }
+  
+  .file-label {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 13px;
+  }
+  
+  #fileInput {
+    font-size: 12px;
+    max-width: 200px;
+  }
+  
+  #score {
+    font-size: 24px;
+    font-weight: bold;
+    color: #00ff00;
+    margin: 10px 0;
+  }
+  
+  #focusMode {
+    color: #ffaa00;
+    font-weight: bold;
+  }
+  
+  /* Crosshair */
+  #crosshair {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 20px;
+    height: 20px;
+    pointer-events: none;
+    z-index: 100;
+    transition: transform 0.1s ease;
+  }
+  
+  #crosshair.hit {
+    transform: translate(-50%, -50%) scale(1.5);
+  }
+  
+  #crosshair::before,
+  #crosshair::after {
+    content: '';
+    position: absolute;
+    background: rgba(255, 255, 255, 0.8);
+    transition: background 0.1s ease;
+  }
+  
+  #crosshair.hit::before,
+  #crosshair.hit::after {
+    background: rgba(0, 255, 0, 1);
+  }
+  
+  #crosshair::before {
+    left: 50%;
+    top: 0;
+    width: 2px;
+    height: 100%;
+    transform: translateX(-50%);
+  }
+  
+  #crosshair::after {
+    top: 50%;
+    left: 0;
+    height: 2px;
+    width: 100%;
+    transform: translateY(-50%);
+  }
+  
+  /* Vignette overlay */
+  #vignette {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 5;
+    background: radial-gradient(circle at center, transparent 0%, transparent 40%, rgba(0, 0, 0, 0.8) 100%);
+    opacity: 0;
+    transition: opacity 0.5s ease, background 0.5s ease;
+  }
+  
+  #vignette.broad {
+    opacity: 0.7;
+    background: radial-gradient(circle at center, transparent 0%, transparent 20%, rgba(0, 0, 0, 0.4) 100%);
+  }
+  
+  #vignette.focused {
+    opacity: 1;
+    background: radial-gradient(circle at center, transparent 0%, transparent 60%, rgba(0, 0, 0, 0.9) 100%);
+  }
+  
