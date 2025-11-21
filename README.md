@@ -1,5 +1,7 @@
 # shooterFocus
 
+🚀 **[Live Demo](https://kylemath.github.io/shooterFocus)** 🚀
+
 A game where the focus level of the shooter affects the focus mode of the game
 
 ## Getting Started
